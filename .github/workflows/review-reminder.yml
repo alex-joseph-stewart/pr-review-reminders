@@ -18,6 +18,7 @@ jobs:
       - name: Create reminder issue
         uses: peter-evans/create-issue-from-file@v5
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           title: "Daily Reminder: Review Marselena's PRs"
           content-filepath: .github/reminders/marselena-prs.md
           labels: "reminder, automated"
