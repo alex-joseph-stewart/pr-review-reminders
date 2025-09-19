@@ -2,9 +2,13 @@ name: Daily PR Review Reminder
 
 on:
   schedule:
-    # Runs every day at 9 AM UTC
+  
     - cron: "0 15 * * *"
   workflow_dispatch: # lets you run it manually
+
+permissions:
+  contents: read
+  issues: write
 
 jobs:
   create-reminder:
