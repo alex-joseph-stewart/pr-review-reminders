@@ -20,5 +20,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: "Daily Reminder: Review Marselena's PRs"
-          content-filepath: .github/reminders/marselena-prs.md
+          filename: .github/reminders/marselena-prs.md
           labels: "reminder, automated"
