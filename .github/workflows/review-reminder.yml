@@ -1,0 +1,19 @@
+name: Daily PR Review Reminder
+
+on:
+  schedule:
+    # Runs every day at 9 AM UTC
+    - cron: "0 15 * * *"
+  workflow_dispatch: # lets you run it manually
+
+jobs:
+  create-reminder:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create reminder issue
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "Daily Reminder: Review Marselena's PRs"
+          content-filepath: .github/reminders/marselena-prs.md
+          labels: "reminder, automated"
